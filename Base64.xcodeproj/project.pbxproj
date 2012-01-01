@@ -10,6 +10,9 @@
 		FA02D90614B016A6000349BE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA02D90514B016A6000349BE /* Foundation.framework */; };
 		FA02D90914B016A6000349BE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA02D90814B016A6000349BE /* main.m */; };
 		FA02D90D14B016A6000349BE /* Base64.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = FA02D90C14B016A6000349BE /* Base64.1 */; };
+		FAFD290014B0C8BB007CDADD /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = FAFD28FA14B0C8BB007CDADD /* NSData+Base64.m */; };
+		FAFD290114B0C8BB007CDADD /* ANBase64Decoder.m in Sources */ = {isa = PBXBuildFile; fileRef = FAFD28FD14B0C8BB007CDADD /* ANBase64Decoder.m */; };
+		FAFD290214B0C8BB007CDADD /* ANBase64Encoder.m in Sources */ = {isa = PBXBuildFile; fileRef = FAFD28FF14B0C8BB007CDADD /* ANBase64Encoder.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,8 +32,14 @@
 		FA02D90114B016A6000349BE /* Base64 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Base64; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA02D90514B016A6000349BE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FA02D90814B016A6000349BE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		FA02D90B14B016A6000349BE /* Base64-Prefix.pch */ = {isa = PBXFileReference; path = "Base64-Prefix.pch"; sourceTree = "<group>"; };
+		FA02D90B14B016A6000349BE /* Base64-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Base64-Prefix.pch"; sourceTree = "<group>"; };
 		FA02D90C14B016A6000349BE /* Base64.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = Base64.1; sourceTree = "<group>"; };
+		FAFD28F914B0C8BB007CDADD /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
+		FAFD28FA14B0C8BB007CDADD /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
+		FAFD28FC14B0C8BB007CDADD /* ANBase64Decoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANBase64Decoder.h; sourceTree = "<group>"; };
+		FAFD28FD14B0C8BB007CDADD /* ANBase64Decoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANBase64Decoder.m; sourceTree = "<group>"; };
+		FAFD28FE14B0C8BB007CDADD /* ANBase64Encoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANBase64Encoder.h; sourceTree = "<group>"; };
+		FAFD28FF14B0C8BB007CDADD /* ANBase64Encoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANBase64Encoder.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +57,7 @@
 		FA02D8F614B016A5000349BE = {
 			isa = PBXGroup;
 			children = (
+				FAFD28F714B0C8BB007CDADD /* ANBase64 */,
 				FA02D90714B016A6000349BE /* Base64 */,
 				FA02D90414B016A6000349BE /* Frameworks */,
 				FA02D90214B016A6000349BE /* Products */,
@@ -86,6 +96,36 @@
 				FA02D90B14B016A6000349BE /* Base64-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FAFD28F714B0C8BB007CDADD /* ANBase64 */ = {
+			isa = PBXGroup;
+			children = (
+				FAFD28F814B0C8BB007CDADD /* Additions */,
+				FAFD28FB14B0C8BB007CDADD /* Transcoders */,
+			);
+			name = ANBase64;
+			path = Base64/ANBase64;
+			sourceTree = "<group>";
+		};
+		FAFD28F814B0C8BB007CDADD /* Additions */ = {
+			isa = PBXGroup;
+			children = (
+				FAFD28F914B0C8BB007CDADD /* NSData+Base64.h */,
+				FAFD28FA14B0C8BB007CDADD /* NSData+Base64.m */,
+			);
+			path = Additions;
+			sourceTree = "<group>";
+		};
+		FAFD28FB14B0C8BB007CDADD /* Transcoders */ = {
+			isa = PBXGroup;
+			children = (
+				FAFD28FC14B0C8BB007CDADD /* ANBase64Decoder.h */,
+				FAFD28FD14B0C8BB007CDADD /* ANBase64Decoder.m */,
+				FAFD28FE14B0C8BB007CDADD /* ANBase64Encoder.h */,
+				FAFD28FF14B0C8BB007CDADD /* ANBase64Encoder.m */,
+			);
+			path = Transcoders;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +179,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA02D90914B016A6000349BE /* main.m in Sources */,
+				FAFD290014B0C8BB007CDADD /* NSData+Base64.m in Sources */,
+				FAFD290114B0C8BB007CDADD /* ANBase64Decoder.m in Sources */,
+				FAFD290214B0C8BB007CDADD /* ANBase64Encoder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,6 +272,7 @@
 				FA02D91214B016A6000349BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
